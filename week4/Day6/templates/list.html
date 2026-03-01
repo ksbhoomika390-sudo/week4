@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Employee List</title>
+</head>
+<body>
+<h2>Employee Records</h2>
+<a href="/add">Add Employee</a>
+<br><br>
+<table border="1">
+<tr>
+<th>ID</th>
+<th>Name</th>
+<th>Email</th>
+<th>Phone</th>
+<th>Department</th>
+<th>Action</th>
+</tr>
+{% for emp in employees %}
+<tr>
+<td>{{emp[0]}}</td>
+<td>{{emp[1]}}</td>
+<td>{{emp[2]}}</td>
+<td>{{emp[3]}}</td>
+<td>{{emp[4]}}</td>
+<td>
+<a href="/edit/{{emp[0]}}">Edit</a>
+<a href="/delete/{{emp[0]}}">Delete</a>
+</td>
+</tr>
+{% endfor %}
+</table>
+</body>
+</html>
